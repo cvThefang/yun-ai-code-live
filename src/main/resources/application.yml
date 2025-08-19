@@ -1,29 +1,36 @@
 spring:
   application:
     name: yun-ai-code-live-backend
+  # mysql 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yun_ai_code_live
+    username: thefang
+    password: 123456
 server:
   port: 8123
   servlet:
     context-path: /api
 
-springdoc: # springdoc-openapi \u9879\u76EE\u63A5\u53E3\u6587\u6863\u7684\u914D\u7F6E
+springdoc: # springdoc-openapi 项目接口文档的配置
   swagger-ui:
-    path: /swagger-ui.html # Knife4j \u6587\u6863\u8BBF\u95EE\u8DEF\u5F84
-    tags-sorter: alpha # \u6807\u7B7E\u6392\u5E8F
-    operations-sorter: alpha # \u63A5\u53E3\u6309\u540D\u79F0\u6392\u5E8F
+    path: /swagger-ui.html # Knife4j 文档访问路径
+    tags-sorter: alpha # 标签排序
+    operations-sorter: alpha # 接口按名称排序
   api-docs:
-    path: /v3/api-docs # OpenAPI \u63CF\u8FF0\u6587\u4EF6\u8DEF\u5F84
-  info: # \u6587\u6863\u63A5\u53E3\u4FE1\u606F\u63CF\u8FF0
-    title: Yun AI Code Live API \u6587\u6863 # \u6587\u6863\u6807\u9898
-    version: 1.0.0 # \u6587\u6863\u7248\u672C
-    contact: # \u6587\u6863\u4F5C\u8005
+    path: /v3/api-docs # OpenAPI 描述文件路径
+  info: # 文档接口信息描述
+    title: Yun AI Code Live API  # 文档标题
+    version: 1.0.0 # 文档版本
+    contact: # 文档作者
       name: Thefang
       url: https://github.com/cvThefang
   group-configs:
     - group: 'default'
       paths-to-match: '/**'
       packages-to-scan: com.thefang.yunaicodelive.controller
-# knife4j\u7684\u589E\u5F3A\u914D\u7F6E\uFF0C\u4E0D\u9700\u8981\u589E\u5F3A\u53EF\u4EE5\u4E0D\u914D
+
+# knife4j的增强配置，不需要增强可以不配
 knife4j:
   enable: true
   setting:

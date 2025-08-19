@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.thefang</groupId>
-    <artifactId>yun-ai-code-live</artifactId>
+    <artifactId>yun-ai-code-live-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>yun-ai-code-live</name>
-    <description>yun-ai-code-live</description>
+    <name>yun-ai-code-live-backend</name>
+    <description>yun-ai-code-live-backend</description>
     <url/>
     <licenses>
         <license/>
@@ -33,6 +33,27 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <!-- 引入ORM框架mybatis-flex依赖（注意这里是springboot3版本） https://mybatis-flex.com/zh/others/codegen.html  -->
+        <dependency>
+            <groupId>com.mybatis-flex</groupId>
+            <artifactId>mybatis-flex-spring-boot3-starter</artifactId>
+            <version>1.11.0</version>
+        </dependency>
+        <!-- 代码生成模块 -->
+        <dependency>
+            <groupId>com.mybatis-flex</groupId>
+            <artifactId>mybatis-flex-codegen</artifactId>
+            <version>1.11.0</version>
+        </dependency>
+        <!-- 数据库连接池 -->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
         </dependency>
         <!-- 引入hutool工具包 https://doc.hutool.cn/pages/index/#%F0%9F%8D%8Amaven -->
         <dependency>
